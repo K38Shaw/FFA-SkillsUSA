@@ -1,23 +1,60 @@
 
 
-<mat-drawer-container class="example-container" >
-  <mat-drawer #drawer > Read Data Methods </mat-drawer>
-
-  <mat-drawer-content>
-    
-   
-    
-    <button mat-raised-button (click)="drawer.toggle()">Toggle drawer</button>
-  </mat-drawer-content>
-</mat-drawer-container>
-
-
-
-
 <mat-tab-group>
   <mat-tab label="Read Data"> 
 
-    <p>Read Me</p>
+    <mat-accordion>
+      
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Team Data
+          </mat-panel-title>
+          <mat-panel-description>
+           This contains team data.
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>Insert Team Data Here</p>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <mat-accordion>
+      
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+           See All Students Data
+          </mat-panel-title>
+          <mat-panel-description>
+           This contains student data.
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <app-student-data></app-student-data>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-accordion>
+      
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Get All Students From Team
+          </mat-panel-title>
+          <mat-panel-description>
+           This will give you all students in a specific team.
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+          
+        <app-school-data></app-school-data>
+
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    
+
+
 
 
 
@@ -72,6 +109,40 @@
       </mat-expansion-panel>
     </mat-accordion> 
   </mat-tab>
-  <mat-tab label="Delete Data"> FFA Delete Data </mat-tab>
-  <mat-tab label="Tools"> FFA Tools </mat-tab>
+  <mat-tab label="Delete Data"> 
+    <mat-tab-group >
+    <mat-tab label="Student"> <p>This will remove a student</p><p>
+
+      Example: http://54.237.71.114/FFA/index.php?mode=deleteStudent&Name=___&schoolName___&teamNumber___&key=___</p> <button>Delete</button></mat-tab>
+    <mat-tab  label="Team"> <p>This will delete one team.</p> <p>Example: http://54.237.71.114/FFA/index.php?mode=deleteATeam&schoolName=___&teamNumber___&key=___</p> <button>Delete</button> </mat-tab>
+    <mat-tab  label="All Scores"> <p>This will delete all scores.</p> <p>Example: http://54.237.71.114/FFA/index.php?mode=deleteScores&key=___</p> <button>Delete</button> </mat-tab>
+    <mat-tab  label="All Students"> <p>This will delete all students.</p> <p>Example: http://54.237.71.114/FFA/index.php?mode=deleteStudents&key=___</p> <button>Delete</button> </mat-tab>
+    <mat-tab  label="All Teams"> <p>This will delete all teams.</p> <p>Example: http://54.237.71.114/FFA/index.php?mode=deleteTeams&key=___</p> <button>Delete</button> </mat-tab>
+    <mat-tab  label="Everything"> <p>This will delete everything.</p> <p>Example: http://54.237.71.114/FFA/index.php?mode=deleteEverything&key=___</p> <button>Delete</button> </mat-tab>
+  </mat-tab-group>
+
+
+</mat-tab>
+
+<mat-tab label="Event Schedule"> 
+  <app-event-schedule></app-event-schedule>
+
+  
+
+  </mat-tab>
+
+  <mat-tab label=" Team Schedules">
+    <p>Insert Something Here</p>
+  
+  </mat-tab>
+  <mat-tab label="Tools"> 
+    <mat-tab-group>
+      <mat-tab label="Unit Testing"> <p>You can view tests at the following location: </p> <p>http://localhost/FFA/UnitTesting.html</p>
+      </mat-tab>
+      <mat-tab label="Load Test Data from 2014"> <p>This will load the students, teams, and scores from 2014. This is a destructive load. It will delete all previous data from the database.</p> <button (click)="alertFail()" >Load 2014 Data</button> </mat-tab>
+      <mat-tab label="Load in CSV File of Student Data"> Needs pulled from other page. <button (click)="alertFail()">Attempt</button> </mat-tab>
+    </mat-tab-group>
+
+
+  </mat-tab>
 </mat-tab-group>

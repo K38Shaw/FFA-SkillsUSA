@@ -14,7 +14,9 @@ export class AppComponent {
   
 
 
-  
+  alertFail(){
+    alert("Attempt Unsuccessful")
+  }
   alertButton(){
     alert("I have been pressed.")}
 }

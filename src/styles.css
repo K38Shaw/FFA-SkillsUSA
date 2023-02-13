@@ -4,7 +4,7 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
-header{
+#header{
     text-align: center;
     font-size: 75px;
     background-color: #D41D06;
@@ -14,7 +14,7 @@ header{
 }
 
 
-img{
+#ffaLogo{
     width: 150px;
     height: 75px;
     position: absolute;
@@ -22,3 +22,7 @@ img{
     left: 50px;
     
 }
+
+.mat-tab-body{
+   padding: 15px;
+   }
