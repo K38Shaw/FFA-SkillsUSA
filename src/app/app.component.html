@@ -1,38 +1,21 @@
+<mat-drawer-container class="example-container" >
+  <mat-drawer #drawer > <app-read-data></app-read-data> </mat-drawer>
+
+  <mat-drawer-content>
+    
+   
+    
+    <button mat-raised-button (click)="drawer.toggle()">Toggle drawer</button>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+
+
+
 <mat-tab-group>
   <mat-tab label="Read Data"> 
 
-    <mat-accordion>
-      
-      <mat-expansion-panel (opened)="panelOpenState = true"
-                           (closed)="panelOpenState = false">
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            Student Data
-          </mat-panel-title>
-          <mat-panel-description>
-           This contains student data.
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-        <app-student-data></app-student-data>
-      </mat-expansion-panel>
-    </mat-accordion>
-    <mat-accordion>
-      
-      <mat-expansion-panel (opened)="panelOpenState = true"
-                           (closed)="panelOpenState = false">
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            School Data
-          </mat-panel-title>
-          <mat-panel-description>
-           This contains school data.
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-        <app-school-data></app-school-data>
-      </mat-expansion-panel>
-    </mat-accordion>
-
-
+    <p>Read Me</p>
 
 
 

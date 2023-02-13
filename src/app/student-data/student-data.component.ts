@@ -4,6 +4,7 @@ export interface Student {
   teamNumber: number;
   school: string;
   ranking: number;
+
 }
 const STUDENT_DATA: Student[] = [
   {name: "Caleb", ranking: 1, school: "Quinter", teamNumber: 1},
